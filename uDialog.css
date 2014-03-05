@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/**
+ * 	reset部分，各业务因地制宜
+ */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,button{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var,i{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+:focus{outline: none;}
+
+
+body{font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
+
+/**
+ * =================================================
+ * 公共弹窗样式
+ *
+ * =================================================
+ */
+/*.cf{*zoom: 1;}
+.cf:after{content: '.';display: block;clear: both;height: 0;overflow: hidden;visibility: hidden;}*/
+.gri-float{position: relative;margin: 0 auto;width: 400px;border:1px solid #b1b9c3;background: #fff;box-shadow: 0 0 20px rgba(0,0,0,0.35);z-index: 200;}
+.gri-float .float-hd{height: 32px;background: #383d49;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
+.gri-float .float-title{float: left;padding-left: 10px;font:14px/32px 'Microsoft Yahei';color: #fff;}
+.gri-float .float-hd .close,.gri-float .float-hd .close:visited{float: right;width: 32px;height: 32px;line-height: 32px;font-size:14px;text-align: center;color: #b1b8c3;text-decoration: none;}
+.gri-float .float-hd .close:hover{color: #fff;text-decoration: none;}
+
+.gri-float .float-bd{padding-top: 1px;min-height: 100px;}
+
+.gri-float .float-ft{padding: 10px 20px 0;height: 36px;border-top: 1px solid #e2e6e9;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
+.gri-float .float-message{float: left;line-height: 26px;}
+.gri-float .float-message a,.gri-float .float-message a:visited{color: #006dd3;text-decoration: none;}
+.gri-float .float-message a:hover{text-decoration: underline;}
+.gri-float .float-actions{float: right;}
+.gri-float .help-inline{display: inline-block;*display: inline;*zoom: 1;color: #555;}
+.gri-float .float-actions .help-inline{*position: relative;*top:-5px;}
+
+.gri-float .f-btn{display: inline-block;*display: inline;*zoom: 1;margin-left: 10px;border-width: 0;background: none;color:#2c82ef;text-align: center;cursor: pointer;
+	height: 26px;line-height: 26px;*line-height: 24px;
+}
+.gri-float .f-btn-primary{background: #2c82ef;color:#fff;
+	width:70px;height:26px;line-height: 26px;
+	*line-height: 20px;
+}
+.gri-float .f-btn-primary:hover{background: #569bf2;}
+.gri-float .f-btn-primary:active{background: #1966cc;}
+.gri-float .f-btn-primary-disabled,.gri-float .f-btn-primary-disabled:hover,.gri-float .f-btn-primary-disabled:active{background: #acaeb4;color: #fff;}
+/*不同尺寸: xxxs xxs xs s 默认 mid l xl xxl xxxl*/
+.gri-float-mid{width: 650px;}
+
+/*弹窗提示*/
+.gri-float .float-confirm {margin:40px;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
+.gri-float .float-confirm h5 {
+    color: #333333;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+.gri-float .float-confirm h4 {
+    color: #333333;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+.gri-float .float-confirm .icon-confirm {
+    display: inline-block;
+    float: left;
+    height: 36px;
+    width: 36px;
+    background: url(./images/spr-float.png) no-repeat;
+}
+.gri-float .float-confirm-success .icon-confirm {background-position: 0 0;}
+.gri-float .float-confirm-error .icon-confirm {background-position: -36px 0;}
+.gri-float .float-confirm-attent .icon-confirm {background-position: -72px 0;}
+.gri-float .float-confirm-warn .icon-confirm {background-position: -108px 0;}
+.gri-float .float-confirm .confirm-cont {
+    color: #666666;
+    margin-left: 50px;
+}

@@ -1,0 +1,338 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<title>uDialog 弹窗组件</title>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript" src="./uDialog.js"></script>
+	<link rel="stylesheet" type="text/css" href="./uDialog.css"/>
+	<style type="text/css">
+	::selection{ background-color: #E13300; color: white; }
+	::moz-selection{ background-color: #E13300; color: white; }
+	::webkit-selection{ background-color: #E13300; color: white; }
+
+	body {
+		background-color: #fff;
+		margin: 40px;
+		font: 12px/20px normal Helvetica, Arial, sans-serif;
+		color: #4F5155;
+	}
+
+	a {
+		color: #003399;
+		background-color: transparent;
+		font-weight: normal;
+		cursor: pointer;
+	}
+
+	h1 {
+		color: #444;
+		background-color: transparent;
+		border-bottom: 1px solid #D0D0D0;
+		font-size: 19px;
+		font-weight: normal;
+		margin: 0 0 14px 0;
+		padding: 14px 15px 10px 15px;
+	}
+	h2 {
+		color: #444;
+		font-size: 13px;
+		font-weight: normal;
+		margin: 0 0 5px 0;
+		padding: 14px 15px 10px 15px;
+	}
+
+	code {
+		font-family: Consolas, Monaco, Courier New, Courier, monospace;
+		font-size: 12px;
+		background-color: #f9f9f9;
+		border: 1px solid #D0D0D0;
+		color: #002166;
+		display: block;
+		margin: 14px;
+		padding: 12px 10px 12px 10px;
+	}
+
+	.wrapper{
+		margin: 0 15px 0 15px;
+		padding-bottom:50px;
+	}
+	
+	p.footer{
+		text-align: right;
+		font-size: 11px;
+		border-top: 1px solid #D0D0D0;
+		line-height: 32px;
+		padding: 0 10px 0 10px;
+		margin: 20px 0 0 0;
+	}
+	tr.split{
+		border-bottom : dashed 1px #D0D0D0;
+	}
+	.header span{
+                padding:0 10px;
+                font-size:25px;
+        }
+	#tabs{
+		min-height:300px;
+		margin: 10px;
+		border: 1px solid #D0D0D0;
+		-webkit-box-shadow: 0 0 8px #D0D0D0;
+	}
+	.container{
+		margin: 10px;
+		border: 1px solid #D0D0D0;
+		-webkit-box-shadow: 0 0 8px #D0D0D0;
+	}
+	.container em{
+		float : right;
+	}
+	</style>
+
+</head>
+<body>
+	<h1>uDialog Demo(弹窗)</h1>
+	<table>
+		<tr class="split">
+			<td>
+			<p>
+				1、常规弹窗：窗体内容纳自定义的html代码段(type=1)
+			</p>
+			<br/>
+				<div class="gri-float">
+					<div class="float-hd cf">
+						<h3 class="float-title">常规弹窗Demo</h3>
+						<a class="close" href="#">×</a>
+					</div>
+					<div class="float-bd">
+						这是一个弹窗Demo
+						<!-- 设置模块 结束 -->
+					</div>
+					<!--脚-->
+					<div class="float-ft cf">
+						<div class="float-message">
+							<div class="help-inline">
+								<a href="javascript:;">如何创建用户标签？</a>
+							</div>
+						</div>
+						<div class="float-actions">
+							<div class="help-inline">此处内容不合法。</div>
+							<input type="button" class="f-btn  f-btn-primary" value="确定" >
+							<input type="button" class="f-btn" value="取消" >
+						</div>
+					</div>
+				</div>
+			</td>
+			<td>
+			<p>
+				&nbsp;调用代码示例：<a id="demo1" onclick="clickAction1()">请点击这里</a>
+			</p>
+			<code style="width: 700px">
+				var dialog = new GRI.Dialog({
+				<br/>
+				title : '常规弹窗Demo',
+				<br/>
+				type : 1,
+				<br/>
+				btnType : 6,
+				<br/>
+				extra : {autoClose : false},
+				<br/>
+				buttons : {text1:确定, text2:取消},
+				<br/>
+				content : '这是一个弹窗Demo',
+				<br/>
+				function(){
+				<br/>
+				dialog.showTips('此处内容不合法');
+				<br/>
+				});
+				<br/>
+				dialog1.showMsg('&lt;a href="#"&gt;如何创建用户标签?&lt;/a&gt;');
+			</code></td>
+		</tr>
+		<tr class="split">
+			<td>
+			<p>
+				2、提示弹窗：提供了常用的四种类型提示弹窗(正确，错误，异常，提示)
+			</p>
+			<br/>
+				<div class="gri-float" style="margin-top:20px;">
+			<div class="float-hd cf">
+				<h3 class="float-title">信息提示弹窗</h3>
+				<a href="" class="close">&times</a>
+			</div>
+			<div class="float-bd">
+				<div class="float-confirm float-confirm-success">
+					<i class="icon-confirm"></i>
+					<div class="confirm-cont">
+						<h4>这是一条成功或者其它提示信息。</h4>
+						<p>点击右侧查看Demo...</p>
+					</div>
+				</div>
+				<div class="float-confirm float-confirm-warn">
+					<i class="icon-confirm"></i>
+					<div class="confirm-cont">
+						<h4>这是一条成功或者其它提示信息。</h4>
+						<p>点击右侧查看Demo...</p>
+					</div>
+				</div>
+				<div class="float-confirm float-confirm-error">
+					<i class="icon-confirm"></i>
+					<div class="confirm-cont">
+						<h4>这是一条成功或者其它提示信息。</h4>
+						<p>点击右侧查看Demo...</p>
+					</div>
+				</div>
+				<div class="float-confirm float-confirm-attent">
+					<i class="icon-confirm"></i>
+					<div class="confirm-cont">
+						<h4>这是一条成功或者其它提示信息。</h4>
+						<p>点击右侧查看Demo...</p>
+					</div>
+				</div>
+			</div>
+			<div class="float-ft cf">
+				<div class="float-actions">
+					<button class="f-btn f-btn-primary">确定</button>
+					<button class="f-btn">取消</button>
+				</div>
+			</div>
+		</div>
+			</td>
+			<td>
+			<p>
+				&nbsp;调用代码示例：<a id="demo1" onclick="clickAction2()">请点击这里</a>
+			</p>
+			<p>&nbsp;设置type:3、4、5、6 控制信息提示的类型</p>
+			<code style="width: 700px">
+				var dialog = new GRI.Dialog({
+				<br/>
+				title : '常规弹窗Demo',
+				<br/>
+				type : 3,
+				<br/>
+				btnType : 6,
+				<br/>
+				extra : {autoClose : false},
+				<br/>
+				buttons : {text1:确定, text2:取消},
+				<br/>
+				content : '这是一条成功或者其它提示信息。',
+				<br/>
+				detail : '点击右侧查看Demo...',
+				<br/>
+				null
+				});
+			</code></td>
+		</tr>
+		<tr class="split">
+			<td>
+			<p>
+				3、可拖拽的弹窗Demo
+			</p>
+			<br/>
+				<div class="gri-float" style="margin-top:20px;">
+			<div class="float-hd cf">
+				<h3 class="float-title">信息提示弹窗</h3>
+				<a href="" class="close">&times</a>
+			</div>
+			<div class="float-bd">
+				<div class="float-confirm float-confirm-warn">
+					<i class="icon-confirm"></i>
+					<div class="confirm-cont">
+						<h4>这是一条成功或者其它提示信息。</h4>
+						<p>点击右侧查看Demo...</p>
+					</div>
+				</div>
+			</div>
+			<div class="float-ft cf">
+				<div class="float-actions">
+					<button class="f-btn f-btn-primary">确定</button>
+					<button class="f-btn">取消</button>
+				</div>
+			</div>
+		</div>
+			</td>
+			<td>
+			<p>
+				&nbsp;调用代码示例：<a id="demo1" onclick="clickAction3()">请点击这里</a>
+			</p>
+			<code style="width: 700px">
+				var dialog = new GRI.Dialog({
+				<br/>
+				title : '可拖拽窗口Demo',
+				<br/>
+				type : 4,
+				<br/>
+				btnType : 6,
+				<br/>
+				extra : {autoClose : false},
+				<br/>
+				buttons : {text1:确定, text2:取消},
+				<br/>
+				content : '这是一个可拖拽的窗口Demo。',
+				<br/>
+				detail : '点击右侧查看Demo...',
+				<br/>
+				null
+				});
+			</code></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		var clickAction1 = function() {
+			var dialog1 = new uDialog({
+				title : '弹窗Demo',
+				type : 1,
+				btnType : 6,
+				buttons : {
+					text1 : '确定',
+					text2 : '取消'
+				},
+				extra : {
+					autoClose : false
+				},
+				content : '这是一个弹窗Demo',
+			}, function() {
+				$('#txt_demo').addClass('is_error');
+				dialog1.showTips('此处内容不合法');
+			});
+			dialog1.showMsg('<a href="#">如何创建用户标签?</a>');
+		}
+		var clickAction2 = function() {
+			var dialog1 = new uDialog({
+				title : '信息提示Demo',
+				type : 3,
+				btnType : 6,
+				buttons : {
+					text1 : '确定',
+					text2 : '取消'
+				},
+				extra : {
+					autoClose : false,
+				},
+				content : '这是一条成功或者其它提示信息。',
+				detail : '点击右侧查看Demo...'
+			}, null);
+		}
+		var clickAction3 = function() {
+			var dialog1 = new uDialog({
+				title : '可拖拽窗口Demo',
+				type : 4,
+				btnType : 6,
+				buttons : {
+					text1 : '确定',
+					text2 : '取消'
+				},
+				extra : {
+					autoClose : false,
+					draggable : true
+				},
+				content : '这是一个可拖拽的窗口Demo。',
+				detail : '点击右侧查看Demo...'
+			}, null);
+		}
+	</script>
+</html>
