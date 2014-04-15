@@ -26,37 +26,43 @@ body{font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
  */
 /*.cf{*zoom: 1;}
 .cf:after{content: '.';display: block;clear: both;height: 0;overflow: hidden;visibility: hidden;}*/
-.gri-float{position: relative;margin: 0 auto;width: 400px;border:1px solid #b1b9c3;background: #fff;box-shadow: 0 0 20px rgba(0,0,0,0.35);z-index: 200;}
-.gri-float .float-hd{height: 32px;background: #383d49;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
-.gri-float .float-title{float: left;padding-left: 10px;font:14px/32px 'Microsoft Yahei';color: #fff;}
-.gri-float .float-hd .close,.gri-float .float-hd .close:visited{float: right;width: 32px;height: 32px;line-height: 32px;font-size:14px;text-align: center;color: #b1b8c3;text-decoration: none;}
-.gri-float .float-hd .close:hover{color: #fff;text-decoration: none;}
+.gri-float{position: relative;margin: 0 auto;width: 480px;background: #fff;box-shadow:0 1px 10px rgba(0,0,0,0.37);border: 1px solid #aeaeae;z-index: 200;}
+.gri-float .float-hd{height: 42px;background: #314f7d;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
+.gri-float .float-title{float: left;padding-left: 10px;font:16px/42px 'Microsoft Yahei';color: #fff;}
+.gri-float .float-hd .close,.gri-float .float-hd .close:visited{float: right;width: 42px;height: 42px;font:bold 26px/38px 'Microsoft Yahei';text-align: center;color: #85a2cd;text-decoration: none;}
+.gri-float .float-hd .close:hover{color: #fff;}
 
 .gri-float .float-bd{padding-top: 1px;min-height: 100px;}
 
-.gri-float .float-ft{padding: 10px 20px 0;height: 36px;border-top: 1px solid #e2e6e9;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
-.gri-float .float-message{float: left;line-height: 26px;}
+.gri-float .float-ft{padding: 8px 10px 0;height: 32px;border-top: 1px solid #dadada;background: #f8f8f8;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
+.gri-float .float-message{float: left;line-height: 24px;color: #808080;}
 .gri-float .float-message a,.gri-float .float-message a:visited{color: #006dd3;text-decoration: none;}
 .gri-float .float-message a:hover{text-decoration: underline;}
 .gri-float .float-actions{float: right;}
 .gri-float .help-inline{display: inline-block;*display: inline;*zoom: 1;color: #555;}
 .gri-float .float-actions .help-inline{*position: relative;*top:-5px;}
 
-.gri-float .f-btn{display: inline-block;*display: inline;*zoom: 1;margin-left: 10px;border-width: 0;background: none;color:#2c82ef;text-align: center;cursor: pointer;
-	height: 26px;line-height: 26px;*line-height: 24px;
+.gri-float .f-btn{display: inline-block;*display: inline;*zoom: 1;margin-left: 5px;*margin-left: 10px;border: 1px solid #a0a9b8;border-radius:2px;color:#333;box-shadow:0px 1px 0px rgba(0,0,0,0.05);text-align: center;cursor: pointer;
+	width:60px;height: 24px;font:12px/22px 'Microsoft Yahei';*line-height: 20px;
+	background: #f5f5f5;
+	background: -ms-linear-gradient(top, #fefefe, #e3e5ec);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#e3e5ec));
+	background: -moz-linear-gradient(top, #fefefe, #e3e5ec);
+	background: -o-linear-gradient(top, #fefefe, #e3e5ec);
+	background: linear-gradient(top, #fefefe, #e3e5ec);
 }
-.gri-float .f-btn-primary{background: #2c82ef;color:#fff;
-	width:70px;height:26px;line-height: 26px;
-	*line-height: 20px;
-}
-.gri-float .f-btn-primary:hover{background: #569bf2;}
-.gri-float .f-btn-primary:active{background: #1966cc;}
-.gri-float .f-btn-primary-disabled,.gri-float .f-btn-primary-disabled:hover,.gri-float .f-btn-primary-disabled:active{background: #acaeb4;color: #fff;}
+.gri-float .f-btn:hover{background: #fefefe;}
+.gri-float .f-btn:active{background: #dbdfe5;box-shadow: inset 0 1px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);border: 1px solid #aeb6be;}
+
+.gri-float .f-btn-primary{background: #5898d7;color: #fff;border-color: #5898d7;}
+.gri-float .f-btn-primary:hover,
+.gri-float .f-btn-primary:active{background: #4b89c6;border-color: #5F96CF;}
+.gri-float .f-btn-primary-disabled,.gri-float .f-btn-primary-disabled:hover,.gri-float .f-btn-primary-disabled:active{background: #e6e6e6;color: #bda8a8;border-color: #CAD0D5 #CAD0D5 #B3B3B3;opacity: 0.65;filter: alpha(opacity=65);cursor: default;}
 /*不同尺寸: xxxs xxs xs s 默认 mid l xl xxl xxxl*/
 .gri-float-mid{width: 650px;}
 
 /*弹窗提示*/
-.gri-float .float-confirm {margin:40px;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
+.gri-float .float-confirm {margin:40px 80px;font:12px/1.5 \5b8b\4f53,arial,Simsun,Arial Unicode MS,Mingliu;}
 .gri-float .float-confirm h5 {
     color: #333333;
     font-size: 14px;
